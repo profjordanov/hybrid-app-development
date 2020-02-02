@@ -1,3 +1,0 @@
-1. npm install --save-dev mocha
-
-1. npm install --save-dev chai
