@@ -1,58 +1,79 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
 
-        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>InitialCordovaApp</title>
-    </head>
-    <body>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
-        <div data-role="page" id="weather-page">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>InitialCordovaApp</title>
+</head>
+<body>
 
-            <div data-role="header" class="header">
-                <h1 id="app-title">Weather App</h1>
-                <a href="/" class="ui-btn ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext" rel="external">Home</a>
-            </div>
+    <div data-role="page" id="button-markup">
 
-            <div role="main" class="ui-content">
-                <form>
-                    <label for="zip-code">Type your zip code:</label>
-                    <input id="zip-code-input" name="zip-code" placeholder="eg. 98001" required />
-                    <button id="get-weather-btn" data-role="button" data-icon="search">Find Weather</button>
-                </form>
+        <div data-role="header" class="header">
+            <h1 id="app-title">
+                Buttons
+            </h1>
+        </div>
 
-                <ul id="weather-data" data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow not-displayed">
-                    <li data-role="list-divider" id="title" class="ui-li-divider ui-bar-a"></li>
-                    <li><span id="summary"><span id="temperature"></span> F <img src="" /></span></li>
-                    <li>Wind: <span id="wind"></span> knots</li>
-                    <li>Humidity: <span id="humidity"></span> %</li>
-                    <li>Visibility: <span id="visibility"></span></li>
-                    <li>Sunrise: <span id="sunrise"></span></li>
-                    <li>Sunset: <span id="sunset"></span></li>
-                </ul>
+        <div role="main" class="ui-content">
 
-                <div id="error-msg" class="not-displayed">
-                </div>
+            <h5>Basic markup</h5>
 
-            </div>
+            <a href="#input-buttons" data-transition="fade" class="ui-btn">Transition</a>
+            <button class="ui-btn">Button</button>
 
-            <footer data-role="footer" data-position="fixed">
-                <h4>Visual Studio Tools for Cordova Demo</h4>
-            </footer>
+            <hr />
+
+            <h5>Corners</h5>
+
+            <a href="#" class="ui-btn ui-corner-all">Anchor</a>
+            <button class="ui-btn ui-corner-all">Button</button>
+
+            <hr />
+
+            <h5>Inline</h5>
+
+            <a href="#" class="ui-btn ui-btn-inline">Anchor</a>
+            <button class="ui-btn ui-btn-inline">Button</button>
+
+            <hr />
+
+            <h5>Theme</h5>
+            <a href="#" class="ui-btn">Anchor - Inherit</a>
+            <a href="#" class="ui-btn ui-btn-a">Anchor - Theme swatch A</a>
+            <a href="#" class="ui-btn ui-btn-b">Anchor - Theme swatch B</a>
+            <button class="ui-btn">Button - Inherit</button>
+            <button class="ui-btn ui-btn-a">Button - Theme swatch A</button>
+            <button class="ui-btn ui-btn-b">Button - Theme swatch B</button>
+        </div>
+    </div>
+
+    <div data-role="page" id="input-buttons">
+
+        <div data-role="header" class="header">
+            <h1 id="app-title">
+                Input buttons
+            </h1>
+        </div>
+
+        <div role="main" class="ui-content">
+
 
         </div>
 
-        <script type="text/javascript" src="scripts/jquery-1.8.0.min.js"></script>
-        <script type="text/javascript" src="scripts/jquery.mobile-1.4.5.min.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
-        <script type="text/javascript" src="scripts/index.js"></script>
-    </body>
+    </div>
+
+    <script type="text/javascript" src="scripts/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+</body>
 </html>
