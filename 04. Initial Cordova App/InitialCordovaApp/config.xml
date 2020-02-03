@@ -104,4 +104,5 @@
     <splash src="res/screens/windows/SplashScreenPhone.scale-240.png" width="1152" height="1920" />
   </platform>
   <plugin name="cordova-plugin-battery-status" spec="~2.0.3" />
+  <plugin name="cordova-sqlite-storage" spec="~4.0.0" />
 </widget>

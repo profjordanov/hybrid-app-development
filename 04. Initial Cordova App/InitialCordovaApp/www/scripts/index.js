@@ -13,6 +13,8 @@
         function onBatteryStatus(status) {
             console.log("Level: " + status.level + " isPlugged: " + status.isPlugged);
         }
+
+        initDatabase();
     };
 
     function onPause() {
