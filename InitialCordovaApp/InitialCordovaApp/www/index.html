@@ -65,7 +65,31 @@
 
         <div role="main" class="ui-content">
 
+            <h5>Default</h5>
+            <form>
+                <input type="button" value="Button">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </form>
+            <hr />
 
+            <h5>Enhanced</h5>
+            <form>
+                <div class="ui-input-btn ui-btn ui-corner-all ui-shadow">
+                    Input value
+                    <input type="button" data-enhanced="true" value="Input value">
+                </div>
+            </form>
+            <hr />
+
+            <h5>Inline</h5>
+            <form>
+                <input type="button" data-inline="true" value="Input">
+                <div class="ui-input-btn ui-btn ui-btn-inline">
+                    Enhanced
+                    <input type="button" data-enhanced="true" value="Enhanced">
+                </div>
+            </form>
         </div>
 
     </div>
