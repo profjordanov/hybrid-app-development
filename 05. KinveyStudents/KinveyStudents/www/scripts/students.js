@@ -4,6 +4,8 @@ const kinveyPassword = "guest";
 const base64Auth = btoa(kinveyUsername + ":" + kinveyPassword);
 
 function loadStudents() {
+    $.mobile.loading("show");
+
     $.ajax({
         type: "GET",
         url: baseSurviceUrl,
@@ -11,6 +13,7 @@ function loadStudents() {
             xhr.setRequestHeader("Authorization", "Basic " + base64Auth);
         },
         success: function (students) {
+            $.mobile.loading("hide");
             displayStudents(students);
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -49,10 +52,10 @@ $('#addStudent').click(function (ev) {
     if (firstName.trim() != "" &&
         lastName.trim() != "" &&
         facultyNumberRegex.test(facultyNumber)) {
-        alert("AAA");
+        $.mobile.loading("show");
         persistStudent(id, firstName, lastName, facultyNumber, grade);
     } else {
-        alert("Invalid data!");
+        $("#errorPopup").popup("open");
     }
 });
 
@@ -76,6 +79,7 @@ function persistStudent(id, firstName, lastName, facultyNumber, grade) {
         dataType: "json",
         data: JSON.stringify(requestData),
         success: function () {
+            $.mobile.loading("hide");
             alert("Successfully added!");
             loadMainPage();
         },
