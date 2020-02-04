@@ -34,3 +34,59 @@ function displayStudents(students) {
             );
     }
 }
+
+$('#addStudent').click(function (ev) {
+    ev.preventDefault();
+
+    let id = Number($('#ID').val());
+    let firstName = $('#FirstName').val();
+    let lastName = $('#LastName').val();
+    let facultyNumber = $('#FacultyNumber').val();
+    let grade = Number($('#Grade').val());
+
+    let facultyNumberRegex = /^\d+$/;
+
+    if (firstName.trim() != "" &&
+        lastName.trim() != "" &&
+        facultyNumberRegex.test(facultyNumber)) {
+        alert("AAA");
+        persistStudent(id, firstName, lastName, facultyNumber, grade);
+    } else {
+        alert("Invalid data!");
+    }
+});
+
+function persistStudent(id, firstName, lastName, facultyNumber, grade) {
+
+    let requestData = {
+        ID: id,
+        FirstName: firstName,
+        LastName: lastName,
+        FacultyNumber: facultyNumber,
+        Grade: grade
+    };
+
+    $.ajax({
+        type: "POST",
+        url: baseSurviceUrl,
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Basic " + base64Auth);
+        },
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify(requestData),
+        success: function () {
+            alert("Successfully added!");
+            loadMainPage();
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            alert("Status: " + textStatus);
+            alert("Error: " + errorThrown);
+        }
+    });
+}
+
+function loadMainPage() {
+    const indexPage = $("#index-page");
+    $.mobile.pageContainer.pagecontainer("change", indexPage, {});
+}
