@@ -15,7 +15,7 @@
             applyBinaryChoiceQuestion(data);
         },
         error: function () {
-            alert("Err");
+            alert("Error with retriving the first binary choice question!");
         }
     });
 
@@ -29,54 +29,75 @@ function applyBinaryChoiceQuestion(data) {
     $("#bin-quote-correct-author").text(data.correctAuthor);
 }
 
-(function () {
-    $("#true-bin-answ-btn").click(function () {
-        const currentQuestionId = $("#bin-quote-id").text();
-        const questIsTrue = $("#bin-quote-isTrue").text();
-        const correctAuthor = $("#bin-quote-correct-author").text();
-        const lastBinaryChoiceQuestionId = localStorage.lastBinaryChoiceQuestionId;
-
-        if (questIsTrue == "true") {
-            if (currentQuestionId == lastBinaryChoiceQuestionId) {
-                showFinalCorrectUserAnswer(correctAuthor);
-            } else {
-                showCorrectUserAnswer(correctAuthor);
-                showNextBcqBtn();
-            }
-        } else {
-            if (currentQuestionId == lastBinaryChoiceQuestionId) {
-                showFinalIncorrectUserAnswer(correctAuthor);
-            } else {
-                showIncorrectUserAnswer(correctAuthor);
-                showNextBcqBtn();
-            }
-        }
-    });
-
-    $("#false-bin-answ-btn").click(function () {
-        const currentQuestionId = $("#bin-quote-id").text();
-        const questIsTrue = $("#bin-quote-isTrue").text();
-        const correctAuthor = $("#bin-quote-correct-author").text();
-        const lastBinaryChoiceQuestionId = localStorage.lastBinaryChoiceQuestionId;
-        if (questIsTrue == "true") {
-            if (currentQuestionId == lastBinaryChoiceQuestionId) {
-                showFinalIncorrectUserAnswer(correctAuthor);
-            } else {
-                showIncorrectUserAnswer(correctAuthor);
-                showNextBcqBtn();
-            }
-        } else {
-            if (currentQuestionId == lastBinaryChoiceQuestionId) {
-                showFinalCorrectUserAnswer(correctAuthor);
-            } else {
-                showCorrectUserAnswer(correctAuthor);
-                showNextBcqBtn();
-            }
-        }
-    });
-})();
-
 // Buttons logic
+
+$("#true-bin-answ-btn").click(function () {
+    const currentQuestionId = $("#bin-quote-id").text();
+    const questIsTrue = $("#bin-quote-isTrue").text();
+    const correctAuthor = $("#bin-quote-correct-author").text();
+    const lastBinaryChoiceQuestionId = localStorage.lastBinaryChoiceQuestionId;
+
+    if (questIsTrue == "true") {
+        if (currentQuestionId == lastBinaryChoiceQuestionId) {
+            showFinalCorrectUserAnswer(correctAuthor);
+        } else {
+            showCorrectUserAnswer(correctAuthor);
+            showNextBcqBtn();
+        }
+    } else {
+        if (currentQuestionId == lastBinaryChoiceQuestionId) {
+            showFinalIncorrectUserAnswer(correctAuthor);
+        } else {
+            showIncorrectUserAnswer(correctAuthor);
+            showNextBcqBtn();
+        }
+    }
+});
+
+$("#false-bin-answ-btn").click(function () {
+    const currentQuestionId = $("#bin-quote-id").text();
+    const questIsTrue = $("#bin-quote-isTrue").text();
+    const correctAuthor = $("#bin-quote-correct-author").text();
+    const lastBinaryChoiceQuestionId = localStorage.lastBinaryChoiceQuestionId;
+    if (questIsTrue == "true") {
+        if (currentQuestionId == lastBinaryChoiceQuestionId) {
+            showFinalIncorrectUserAnswer(correctAuthor);
+        } else {
+            showIncorrectUserAnswer(correctAuthor);
+            showNextBcqBtn();
+        }
+    } else {
+        if (currentQuestionId == lastBinaryChoiceQuestionId) {
+            showFinalCorrectUserAnswer(correctAuthor);
+        } else {
+            showCorrectUserAnswer(correctAuthor);
+            showNextBcqBtn();
+        }
+    }
+});
+
+$("#next-bin-quest-btn").click(function () {
+    const currentQuoteId = $("#bin-quote-id").text();
+
+    const querydata = {
+        initialId: currentQuoteId
+    };
+
+    const url = baseSurviceQuizUrl + "binary-choice-question" + encodeQueryData(querydata);
+
+    $.ajax({
+        url: url,
+        type: 'GET',
+        responseType: 'application/json',
+        success: function (data) {
+            applyBinaryChoiceQuestion(data);
+            showYesNoBtns();
+        },
+        error: function () {
+            $.fancybox("#error");
+        }
+    });
+});
 
 function showNextBcqBtn() {
     $("#who-is").hide();
