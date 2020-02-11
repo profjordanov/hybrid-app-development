@@ -76,11 +76,57 @@
                 Next
             </button>
 
+            <div id="bcq-correct-user-answer-popup" data-role="popup">
+                <div class="popup-title">
+                    <h2 style="color: green;">Correct!</h2>
+                </div>
+                <div class="popup-content">
+                    <p>The right answer is: <span id="bcq-correct-author-answer"></span></p>
+                </div>
+            </div>
+
+            <div id="bcq-incorrect-user-answer-popup" data-role="popup">
+                <div class="popup-title">
+                    <h2 style="color: red;">Sorry, you are wrong!</h2>
+                </div>
+                <div class="popup-content">
+                    <p>The right answer is: <span id="bcq-incorrect-author-answer"></span></p>
+                </div>
+            </div>
+
+            <div id="bcq-correct-user-answer-quiz-end-popup" data-role="popup">
+                <div class="popup-title">
+                    <h2 style="color: green;">Correct!</h2>
+                </div>
+                <div class="popup-content">
+                    <p>The right answer is: <span id="bcq-correct-author-final-answer"></span></p>
+                    <p>
+                        Congratulations! You have reached the end of the quiz! You can go to Settings
+                        and try another question type.
+                    </p>
+                </div>
+            </div>
+
+            <div id="bcq-incorrect-user-answer-quiz-end-popup" data-role="popup">
+                <div class="popup-title">
+                    <h2 style="color: red;">Sorry, you are wrong!</h2>
+                </div>
+                <div class="popup-content">
+                    <p>The right answer is: <span id="bcq-incorrect-author-final-answer"></span></p>
+                    <p>
+                        Congratulations! You have reached the end of the quiz! You can go to Settings
+                        and try another question type.
+                    </p>
+                </div>
+            </div>
+
         </div>
 
         <footer data-role="footer" data-position="fixed">
             <h4>University of Economics - Varna</h4>
         </footer>
+
+
 
     </div>
 
@@ -101,9 +147,9 @@
                             <form>
                                 <div style="padding:10px 20px;">
                                     <label for="un" class="ui-hidden-accessible">Username:</label>
-                                    <input type="text" name="user" id="un" value="" placeholder="username" data-theme="a">
+                                    <input type="text" name="user-mcq" id="un-mcq" value="" placeholder="username" data-theme="a">
                                     <label for="pw" class="ui-hidden-accessible">Password:</label>
-                                    <input type="password" name="pass" id="pw" value="" placeholder="password" data-theme="a">
+                                    <input type="password" name="pass-mcq" id="pw-mcq" value="" placeholder="password" data-theme="a">
                                     <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Sign in</button>
                                 </div>
                             </form>

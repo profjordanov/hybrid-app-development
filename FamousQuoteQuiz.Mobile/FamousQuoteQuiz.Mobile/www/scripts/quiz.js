@@ -29,6 +29,95 @@ function applyBinaryChoiceQuestion(data) {
     $("#bin-quote-correct-author").text(data.correctAuthor);
 }
 
+(function () {
+    $("#true-bin-answ-btn").click(function () {
+        const currentQuestionId = $("#bin-quote-id").text();
+        const questIsTrue = $("#bin-quote-isTrue").text();
+        const correctAuthor = $("#bin-quote-correct-author").text();
+        const lastBinaryChoiceQuestionId = localStorage.lastBinaryChoiceQuestionId;
+
+        if (questIsTrue == "true") {
+            if (currentQuestionId == lastBinaryChoiceQuestionId) {
+                showFinalCorrectUserAnswer(correctAuthor);
+            } else {
+                showCorrectUserAnswer(correctAuthor);
+                showNextBcqBtn();
+            }
+        } else {
+            if (currentQuestionId == lastBinaryChoiceQuestionId) {
+                showFinalIncorrectUserAnswer(correctAuthor);
+            } else {
+                showIncorrectUserAnswer(correctAuthor);
+                showNextBcqBtn();
+            }
+        }
+    });
+
+    $("#false-bin-answ-btn").click(function () {
+        const currentQuestionId = $("#bin-quote-id").text();
+        const questIsTrue = $("#bin-quote-isTrue").text();
+        const correctAuthor = $("#bin-quote-correct-author").text();
+        const lastBinaryChoiceQuestionId = localStorage.lastBinaryChoiceQuestionId;
+        if (questIsTrue == "true") {
+            if (currentQuestionId == lastBinaryChoiceQuestionId) {
+                showFinalIncorrectUserAnswer(correctAuthor);
+            } else {
+                showIncorrectUserAnswer(correctAuthor);
+                showNextBcqBtn();
+            }
+        } else {
+            if (currentQuestionId == lastBinaryChoiceQuestionId) {
+                showFinalCorrectUserAnswer(correctAuthor);
+            } else {
+                showCorrectUserAnswer(correctAuthor);
+                showNextBcqBtn();
+            }
+        }
+    });
+})();
+
+// Buttons logic
+
+function showNextBcqBtn() {
+    $("#who-is").hide();
+    const correctAuthor = $("#bin-quote-correct-author").text();
+    $("#bin-quote-correct-answer").show();
+    $("#bin-quote-correct-answer").text("by " + correctAuthor);
+
+    $("#next-bin-quest-btn").show();
+    $("#yes-no-buttons").hide();
+}
+
+function showYesNoBtns() {
+    $("#bin-quote-correct-answer").hide();
+    $("#who-is").show();
+
+    $("#yes-no-buttons").show();
+    $("#next-bin-quest-btn").hide();
+}
+
+// Popups logic
+
+function showCorrectUserAnswer(correctAuthor) {
+    $("#bcq-correct-author-answer").text(correctAuthor);
+    $("#bcq-correct-user-answer-popup").popup("open");
+}
+
+function showIncorrectUserAnswer(correctAuthor) {
+    $("#bcq-incorrect-author-answer").text(correctAuthor);
+    $("#bcq-incorrect-user-answer-popup").popup("open");
+}
+
+function showFinalCorrectUserAnswer(correctAuthor) {
+    $("#bcq-correct-author-final-answer").text(correctAuthor);
+    $("#bcq-correct-user-answer-quiz-end-popup").popup("open");
+}
+
+function showFinalIncorrectUserAnswer(correctAuthor) {
+    $("#bcq-incorrect-author-final-answer").text(correctAuthor);
+    $("#bcq-incorrect-user-answer-quiz-end-popup").popup("open");
+}
+
 // END Binary Choice Question Logic Section
 
 // BEGIN Multiple Choice Question Logic Section
