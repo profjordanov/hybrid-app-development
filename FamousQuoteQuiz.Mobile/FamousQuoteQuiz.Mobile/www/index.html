@@ -190,6 +190,52 @@
                 Next
             </button>
 
+            <!--BEGIN Popup Area-->
+            <div id="mcq-correct-user-answer-popup" data-role="popup">
+                <div class="popup-title">
+                    <h2 style="color: green;">Correct!</h2>
+                </div>
+                <div class="popup-content">
+                    <p>The right answer is: <span id="mcq-correct-author-answer"></span></p>
+                </div>
+            </div>
+
+            <div id="mcq-incorrect-user-answer-popup" data-role="popup">
+                <div class="popup-title">
+                    <h2 style="color: red;">Sorry, you are wrong!</h2>
+                </div>
+                <div class="popup-content">
+                    <p>The right answer is: <span id="mcq-incorrect-author-answer"></span></p>
+                </div>
+            </div>
+
+            <div id="mcq-correct-user-answer-quiz-end-popup" data-role="popup">
+                <div class="popup-title">
+                    <h2 style="color: green;">Correct!</h2>
+                </div>
+                <div class="popup-content">
+                    <p>The right answer is: <span id="mcq-correct-author-final-answer"></span></p>
+                    <p>
+                        Congratulations! You have reached the end of the quiz! You can go to Settings
+                        and try another question type.
+                    </p>
+                </div>
+            </div>
+
+            <div id="mcq-incorrect-user-answer-quiz-end-popup" data-role="popup">
+                <div class="popup-title">
+                    <h2 style="color: red;">Sorry, you are wrong!</h2>
+                </div>
+                <div class="popup-content">
+                    <p>The right answer is: <span id="mcq-incorrect-author-final-answer"></span></p>
+                    <p>
+                        Congratulations! You have reached the end of the quiz! You can go to Settings
+                        and try another question type.
+                    </p>
+                </div>
+            </div>
+            <!--END Popup Area-->
+
         </div>
 
         <footer data-role="footer" data-position="fixed">
