@@ -7,4 +7,17 @@ function sum3Numbers(arr) {
     return sum;
 }
 
-module.exports = { sum3Numbers };
+function calculateSumAndVAT(arr) {
+    let sum = 0;
+
+    for(let price of arr) {
+        sum += Number(price);
+    }
+	
+	let vat = sum * 0.2;
+	let total = sum * 1.2;
+	
+	return total;
+}
+
+module.exports = { sum3Numbers, calculateSumAndVAT };
