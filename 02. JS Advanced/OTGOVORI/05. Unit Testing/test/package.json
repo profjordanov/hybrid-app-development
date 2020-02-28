@@ -1,0 +1,15 @@
+{
+  "name": "sum_tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sum_tests.js",
+  "scripts": {
+    "test": "mocha calculator_tests.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.0.1"
+  }
+}
