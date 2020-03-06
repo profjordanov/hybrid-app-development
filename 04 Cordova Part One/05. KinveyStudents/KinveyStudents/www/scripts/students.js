@@ -1,4 +1,4 @@
-﻿const baseSurviceUrl = "https://baas.kinvey.com/appdata/kid_BJXTsSi-e/students";
+﻿const baseSurviceUrl = "https://baas.kinvey.com/appdata/kid_rk6GOYkSL/students";
 const kinveyUsername = "guest";
 const kinveyPassword = "guest";
 const base64Auth = btoa(kinveyUsername + ":" + kinveyPassword);
@@ -24,6 +24,7 @@ function loadStudents() {
 }
 
 function displayStudents(students) {
+    console.log(students);
     $('#results').find('tr').nextAll().remove();
 
     students = students.sort((a, b) => a.ID - b.ID);
@@ -32,8 +33,8 @@ function displayStudents(students) {
     for (let student of students) {
         $("#results")
             .append($('<tr>')
-                .append($('<td>').text(student.FirstName))
-                .append($('<td>').text(student.Grade))
+                .append($('<td>').text(student.firstName))
+                .append($('<td>').text(student.grade))
             );
     }
 }
@@ -62,11 +63,11 @@ $('#addStudent').click(function (ev) {
 function persistStudent(id, firstName, lastName, facultyNumber, grade) {
 
     let requestData = {
-        ID: id,
-        FirstName: firstName,
-        LastName: lastName,
-        FacultyNumber: facultyNumber,
-        Grade: grade
+        id: id,
+        firstName: firstName,
+        lastName: lastName,
+        facultyNumber: facultyNumber,
+        grade: grade
     };
 
     $.ajax({
@@ -84,6 +85,7 @@ function persistStudent(id, firstName, lastName, facultyNumber, grade) {
             loadMainPage();
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
+
             alert("Status: " + textStatus);
             alert("Error: " + errorThrown);
         }
