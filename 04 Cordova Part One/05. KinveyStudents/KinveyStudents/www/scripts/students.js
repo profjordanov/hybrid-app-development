@@ -95,4 +95,5 @@ function persistStudent(id, firstName, lastName, facultyNumber, grade) {
 function loadMainPage() {
     const indexPage = $("#index-page");
     $.mobile.pageContainer.pagecontainer("change", indexPage, {});
+    loadStudents();
 }
