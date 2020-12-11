@@ -1,0 +1,27 @@
+#menu {
+
+}
+
+#menu>#loggedInUser {
+
+}
+
+#menu a {
+
+}
+
+
+
+#infoBox,
+#errorBox,
+#loadingBox {
+
+}
+
+footer {
+    background: #DDD;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    text-align: center;
+    border-radius: 3px;
+}
