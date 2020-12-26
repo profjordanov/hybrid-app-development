@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; img-src 'self' data:; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="js/jquery-1.5.0.mobile.min.css">
+    <style>
+        /* For avoiding title truncation in wp8 */
+        
+        .ui-header .ui-title {
+            overflow: visible !important;
+        }
+        /* For fixing the absolute position issue for the default cordova gen page*/
+        
+        #cjp-accordion1 .app {
+            left: 5px !important;
+            margin: 5px !important;
+            position: relative !important;
+        }
+    </style>
+    <title>Hello World</title>
+</head>
+
+<body>
+    <!-- home page -->
+    <div data-role="page" id="homePage">
+        <div data-role="header">
+            <h1>Student Admin</h1>
+        </div>
+        <ul data-role="listview">
+            <li><a href="#detailsPage">Student Details</a></li>
+        </ul>
+
+        <div data-role="footer" data-position="fixed">
+            <h1>Home Page</h1>
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- home page -->
+
+    <!-- Details Page -->
+    <div data-role="page" id="detailsPage">
+        <div data-role="header">
+            <a href="#" data-icon="back" data-rel="back" title="Go back">Back</a>
+            <h1 id="student-name">Student Name</h1>
+        </div>
+
+        <div class="ui-content">
+            <img src="" alt="student-picture-view" id="student-picture-view" height="200" width="200">
+            <br>
+
+            <label for="student-faculty-number">Faculty Number:</label>
+            <p id="student-faculty-number">Student Faculty Number</p>
+
+            <label for="student-email">Email:</label>
+            <p id="student-email">Student Email</p>
+
+            <label for="student-username">User Name:</label>
+            <p id="student-username">Generated User Name</p>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h4>
+                Make picture
+                <a href="#picturePage" data-transition="slide" data-role="button" data-icon="camera">Camera</a>
+            </h4>
+        </div>
+    </div>
+    <!-- /Details -->
+
+    <!-- Picture Page -->
+    <div data-role="page" id="picturePage">
+        <div data-role="header">
+            <a href="#" data-icon="back" data-rel="back" title="Go back">Back</a>
+            <h1>Student Picture</h1>
+        </div>
+
+        <div class="ui-content">
+            <div>
+                <button id="camera-btn" data-role="button" data-icon="camera">CLICK</button>
+                <img id="myImage" src="#" alt="Alternate Text" class="not-displayed" style="margin: auto;" />
+
+                <label for="facultyNumber">Faculty Number:</label>
+                <input type="text" id="faculty-number" min="1" />
+
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" />
+
+                <button id="addPicture">Add Picture</button>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h1>Student Picture</h1>
+        </div>
+    </div>
+    <!-- /Picture -->
+
+    <script src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script>
+    <script type="text/javascript" id="jqm-trans-disable">
+        /* For having a faster transition */
+        $(document).on("mobileinit", function() {
+            $.mobile.defaultPageTransition = "none";
+            $.mobile.defaultDialogTransition = "none";
+        });
+    </script>
+    <script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/students.js"></script>
+</body>
+
+</html>
