@@ -21,7 +21,7 @@
 7) контролно
 8) Onsen UI / sqlite
 0) Onsen UI 2 / android build 
-10) React / React Native / Клауд услуги ас. Йорданов на лекция
+10) React / React Native ас. Йорданов на лекция
 
 Време: ( 2 седмици )
 
