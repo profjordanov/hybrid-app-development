@@ -9,7 +9,60 @@
     <link rel="stylesheet" type="text/css" href="styles/book-library.css" />
 </head>
 
-<body onload="????">
+<body onload="startApp()">
+    <header id="menu">
+        <a href="#" id="linkHome">Home</a>
+        <a href="#" id="linkLogin">Login</a>
+        <a href="#" id="linkRegister">Register</a>
+        <a href="#" id="linkListBooks">List Books</a>
+        <a href="#" id="linkCreateBook">Create Book</a>
+        <a href="#" id="linkLogout">Logout</a>
+        <span id="loggedInUser"></span>
+    </header>
+    <main>
+        <section id="loadingBox">Loading...</section>
+        <section id="infoBox">Info</section>
+        <section id="errorBox">Error</section>
+
+        <section id="viewHome">
+            <h1>Welcome</h1>
+            Welcome to our library.
+        </section>
+
+        <section id="viewLogin">
+            <h1>Please login</h1>
+
+        </section>
+
+        <section id="viewRegister">
+            <h1>Please register here</h1>
+
+        </section>
+
+        <section id="viewBooks">
+            <h1>Books</h1>
+            <div id="books">
+                <table>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="viewCreateBook">
+            <h1>Create new book</h1>
+        </section>
+
+        <section id="viewEditBook">
+            <h1>Edit existing book:</h1>
+        </section>
+
+    </main>
+    <footer>Book Library - Simple SPA Application</footer>
 </body>
 
 </html>
