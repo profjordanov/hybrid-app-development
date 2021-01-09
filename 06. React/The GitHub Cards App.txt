@@ -1,0 +1,65 @@
+1) React Class Components
+
+https://jscomplete.com/playground/rgs2.1
+
+https://jscomplete.com/playground/rgs2.2
+
+____________________________________________________
+
+2) Styling React Components
+
+https://jscomplete.com/playground/react-style
+
+https://jscomplete.com/playground/rgs2.2
+
+class Card extends React.Component {
+	render() {
+  	return (
+    	<div className="github-profile" style={{marginLeft: 100}}>
+    	  <img src="https://placehold.it/75" />
+        <div className="info">
+          <div className="name" style={{fontSize: '150%'}}>Name here...</div>
+          <div className="company">Company here...</div>
+        </div>
+    	</div>
+    );
+  }
+}
+
+class App extends React.Component {
+	render() {
+  	return (
+    	<div>
+    	  <div className="header">{this.props.title}</div>
+        <Card />
+    	</div>
+    );
+  }	
+}
+
+ReactDOM.render(
+	<App title="The GitHub Cards App" />,
+  mountNode,
+);
+
+______________________________________________________________________
+
+3) Working with Data
+
+https://jscomplete.com/playground/rgs2.3
+
+https://jscomplete.com/playground/rgs2.4
+
+_________________________________________________________________________
+
+4) Initializing and Reading the State Object
+
+https://jscomplete.com/playground/rgs2.5
+
+________________________________________________________________________
+
+5) Taking Input from the User and Working with Ajax Calls
+
+https://jscomplete.com/playground/rgs2.6 
+
+https://jscomplete.com/playground/rgs2.7
