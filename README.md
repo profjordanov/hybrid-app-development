@@ -3,6 +3,11 @@
 - MyDevice App Tutorial (part one) - https://youtu.be/K1LDGTSLsLk
 - MyDevice App Tutorial (part two) - https://youtu.be/UQzel0XUK2o
 
+# Виртуална стая
+
+https://meet.google.com/uwh-zwte-haj
+
+
 # Бележник
 1) Лекция : Основи в JavaScript
 2) Основи на jQuery
