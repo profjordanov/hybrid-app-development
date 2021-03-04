@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "0803d003-516c-4f96-bfe8-8ba060341688",
+		"name": "kinvey",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "5a8c8675b64b4834a0ed70e7f7f85114",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "kid_r11QOPsMd",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"yordan2\",\r\n    \"password\":\"123qwee\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://baas.kinvey.com/user/kid_r11QOPsMd/",
+					"protocol": "https",
+					"host": [
+						"baas",
+						"kinvey",
+						"com"
+					],
+					"path": [
+						"user",
+						"kid_r11QOPsMd",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "kid_r11QOPsMd",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "5a8c8675b64b4834a0ed70e7f7f85114",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"yordan\",\r\n    \"password\":\"123qwe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://baas.kinvey.com/user/kid_r11QOPsMd/login",
+					"protocol": "https",
+					"host": [
+						"baas",
+						"kinvey",
+						"com"
+					],
+					"path": [
+						"user",
+						"kid_r11QOPsMd",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new book",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "Kinvey 7d8b2cc2-7ac2-4a51-9140-7e470b900aa0.OPsOHyXtkd3IaqT1IaTyWgmFyl2NmMBfRaujCIFTnyk=",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"title\":\"ttt\", \"author\":\"aaa\", \"description\":\"ddd\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://baas.kinvey.com/appdata/kid_r11QOPsMd/books",
+					"protocol": "https",
+					"host": [
+						"baas",
+						"kinvey",
+						"com"
+					],
+					"path": [
+						"appdata",
+						"kid_r11QOPsMd",
+						"books"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
