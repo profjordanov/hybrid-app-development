@@ -1,0 +1,57 @@
+<html>
+
+<head>
+  <title>The Example Form</title>
+  <style>
+    div {
+      margin: 10px;
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+      $('#backPage').click(function(){
+        document.location.href = "Registration_2.html";
+      });
+
+    });
+    
+  </script>
+</head>
+
+<body>
+  <form id="regForm" autocomplete="off">
+    <!-- Radio Buttons -->
+    <div>
+      <fieldset id='gender'>
+        <legend>Gender</legend>
+        <input type="radio" name="option" value="male">Male</input><br>
+        <input type="radio" name="option" value="female">Female</input><br>
+        <input type="radio" name="option" value="other">Other</input>
+        <div id='radioDiv'></div>
+      </fieldset>
+    </div>
+
+    <!-- Textarea -->
+    <div>
+      <label for="textarea">Biography</label>
+      <div>
+        <textarea id="textarea"
+          name="textarea"></textarea></div>
+    </div>
+
+    <!-- Navigation and Submit Buttons -->
+    <div>
+      <div>
+        <input type="button" id="backPage" value="< Back" />
+        <input type="submit" id="submitButton" name="submit" />
+      </div>
+    </div>
+
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <title>The Example Form</title>
+    <style>
+        div {
+            margin: 10px;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+        });    
+    </script>
+</head>
+<body>
+    <form id="regForm" autocomplete="off">
+        <!-- First Name Text Input-->
+        <div>
+            <label for="firstName">First Name</label>
+            <br>
+            <input type="text" id="firstName" name="firstName">
+        </div>
+
+        <!-- Last Name Text Input-->
+        <div>
+            <label for="lastName">Last Name</label>
+            <br>
+            <input type="text" id="lastName" name="lastName">
+        </div>
+
+        <!-- Email Text Input-->
+        <div>
+            <label for="email">Email</label>
+            <br>
+            <input type="email" id="email" name="email">
+        </div>
+
+        <!-- Password input-->
+        <div>
+            <label for="pwd1">Password</label>
+            <br>
+            <input type="password" id="pwd1" name="pwd1">
+        </div>
+
+        <div>
+            <label for="pwd2">Confirm Password</label>
+            <br>
+            <input type="password" id="pwd2" name="pwd2">
+        </div>
+
+        <!-- Radio Buttons -->
+        <div>
+            <fieldset id='gender'>
+                <legend>Gender</legend>
+                <input type="radio" name="option" value="male">Male</input><br>
+                <input type="radio" name="option" value="female">Female</input><br>
+                <input type="radio" name="option" value="other">Other</input>
+                <div id='radioDiv'></div>
+            </fieldset>
+        </div>
+
+        <!-- Select Basic -->
+        <div>
+            <label for="selectbasic">US Time Zone</label>
+            <div>
+                <select id="selectbasic" name="selectbasic">
+                    <option hidden selected value> -- select an option -- </option>
+                    <option value="ET">Easter Time</option>
+                    <option value="CT">Central Time</option>
+                    <option value="MT">Mountain Time</option>
+                    <option value="PT">Pacific Time</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Textarea -->
+        <div>
+            <label for="textarea">Biography</label>
+            <div>
+                <textarea id="textarea" name="textarea">Richard is an architect.</textarea>
+            </div>
+        </div>
+
+        <!-- Button (Double) -->
+        <div>
+            <label id="buttons" name="buttons">Button Types</label>
+            <div>
+                <input type="submit" id="submitButton" name="submit" />
+                <input type="reset" id="resetButton" name="reset" />
+                <input type="button" id="customButton" value="Custom Button" />
+            </div>
+        </div>
+
+    </form>
+</body>
+
+</html>
