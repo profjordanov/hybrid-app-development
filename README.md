@@ -1,7 +1,3 @@
-# Виртуална стая
-
-https://meet.google.com/mcg-bxig-wyn
-
 # График
 
 Дата	Упражнение
@@ -36,12 +32,15 @@ https://meet.google.com/mcg-bxig-wyn
 
 4/22/2021	Защити КР
 
-
 # Оценяване            
 
-1) максимум 7 точки от направени тестове в платформата https://students-manager.site/Test
-2) максимум 7 точки от предадени домашни в платформата https://students-manager.site/Homework
+1) максимум 7 точки от направени тестове в платформата https://students-manager.website/Test
+2) максимум 7 точки от предадени домашни в платформата https://students-manager.website/Homework
 3) максимум 3 точки от 1во контролно 
 4) максимум 3 точки от 2ро контролно 
-5) максимум 10 точки от полагане на "автоматизиран" изпит в платформата https://students-manager.site/Click 
-6) максимум 20 точки от курсов проект https://students-manager.site/Coursework
+5) максимум 10 точки от полагане на "автоматизиран" изпит в платформата https://students-manager.website/Click 
+6) максимум 20 точки от курсов проект https://students-manager.website/Coursework
+
+# Виртуална стая
+
+https://meet.google.com/mcg-bxig-wyn
