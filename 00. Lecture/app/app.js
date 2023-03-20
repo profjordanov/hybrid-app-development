@@ -4,10 +4,11 @@ const port = 8080;
 
 http
     .createServer((req, res) => {
+        var url = req.url;
         res.writeHeader(200, {
             "Content-Type": "text/html"
         });
-        res.write("Hi");
+        res.write("Hi " + url);
         res.end();
     })
     .listen(port);
