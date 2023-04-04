@@ -40,6 +40,16 @@ ____________________________________________________
 
 https://jscomplete.com/playground/react-style
 
+class ConditionalStyle extends React.Component {
+	render() {
+  	return (
+    	<div style={{ color: Math.random() < 0.5 ? 'green': 'red' }}>
+    	  How do you like this?
+    	</div>
+    );
+  }	
+}
+
 https://jscomplete.com/playground/rgs2.2
 
 class Card extends React.Component {
