@@ -1,0 +1,99 @@
+import * as React from "react";
+
+const Card = ({profile}) => (
+    <>
+        <div className="card">
+            <img
+                className="img-responsive img-rounded"
+                alt="Card image cap"
+                src={profile.avatar_url}
+                style={{maxHeight: 250, maxWidth: 250}}/>
+            <div className="card-body">
+                <div className="card-title">{profile.name}</div>
+                <div className="card-text">{profile.company}</div>
+            </div>
+        </div>
+        <br/>
+    </>
+
+);
+
+export default Card;
+
+____________________________________________________
+
+import Card from "./Card";
+
+const CardList = ({profiles}) => (
+    <div className="card-deck">
+        {profiles.map(profile => <Card key={profile.id} profile={profile}/>)}
+    </div>
+);
+
+export default CardList;
+
+______________________________________________________________________
+
+import React, {useState} from "react";
+import axios from "axios";
+
+const Form = ({onSubmit}) => {
+    const [userName, setUserName] = useState("");
+
+    const handleChange = (e) => {
+        setUserName(e.currentTarget.value);
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const resp = await axios.get(`https://api.github.com/users/${userName}`);
+        onSubmit(resp.data);
+        setUserName("");
+    };
+
+    return (
+        <>
+            <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                    <label htmlFor="userName">User name</label>
+                    <input
+                        type="text"
+                        value={userName}
+                        onChange={handleChange}
+                        placeholder="GitHub username"
+                        className="form-control"
+                        id="userName"
+                        required
+                    />
+                </div>
+                <br/>
+                <button className="btn btn-primary">Add card</button>
+            </form>
+            <br/>
+        </>
+    );
+}
+export default Form;
+_________________________________________________________________________
+
+import React, {useState} from "react";
+import Form from "./Form";
+import CardList from "./CardList";
+
+export default function App({title}) {
+    const [profiles, setProfiles] = useState([]);
+
+    const addNewProfile = (profileData) => {
+        setProfiles((profiles) => [profileData, ...profiles])
+    };
+
+    return (
+        <div className="container">
+            <header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                {title}
+            </header>
+            <Form onSubmit={addNewProfile}/>
+            <CardList profiles={profiles}/>
+        </div>
+    );
+}
