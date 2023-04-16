@@ -1,0 +1,114 @@
+import React from "react";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+
+export default function Card({ profile, removeProfile }) {
+  return (
+    <TouchableOpacity  style={styles.card} onPress={() => removeProfile(profile.id)}>
+      <Image source={{ uri: profile.avatar_url }} style={{ width: 150, height: 150 }} />
+      <View>
+        <Text>{profile.name}</Text>
+        <Text>{profile.company}</Text>
+      </View>
+    </TouchableOpacity >
+  );
+}
+
+const styles = StyleSheet.create({
+  card: {
+    paddingTop: 40,
+  },
+});
+
+___________________
+
+import React from "react";
+import Card from "./Card";
+import { View } from "react-native";
+
+export default function CardList({ profiles, removeProfile }) {
+  return (
+    <View>
+      {profiles.map((profile) => (
+        <Card key={profile.id} profile={profile} removeProfile={removeProfile} />
+      ))}
+    </View>
+  );
+}
+
+_________________________
+
+import React, { useState } from "react";
+import {
+  TextInput,
+  Button,
+  SafeAreaView,
+} from "react-native";
+import axios from "axios";
+
+const Form = ({ onSubmit }) => {
+  const [username, setUsername] = useState("");
+
+  const handleSubmit = async (username) => {
+    try {
+      const resp = await axios.get(`https://api.github.com/users/${username}`);
+      onSubmit(resp.data);
+      setUsername("");
+    } catch (ex) {
+      alert(ex);
+    }
+  };
+
+  return (
+    <SafeAreaView>
+      <TextInput
+        type="text"
+        value={username}
+        onChangeText={(username) => setUsername(username)}
+        placeholder="GitHub username"
+        ref={input => {
+          this.textInput = input;
+        }}
+        required
+      />
+      <Button title="Add card" onPress={() => handleSubmit(username)} />
+    </SafeAreaView>
+  );
+};
+
+export default Form;
+
+___________________________
+
+import React, { useState } from "react";
+import Form from "./components/Form";
+import CardList from "./components/CardList";
+import {
+  StyleSheet, Text,
+  View,
+} from "react-native";
+
+export default function App() {
+  const [profiles, setProfiles] = useState([]);
+
+  const addNewProfile = (profileData) => {
+    setProfiles((profiles) => [profileData, ...profiles]);
+  };
+
+  const removeProfile = (id) => {
+    setProfiles((profiles) => profiles.filter((rec) => id !== rec.id));
+  }
+
+  return (
+    <View style={styles.container}>
+      <Text style={{ textAlignVertical: "center", textAlign: "center" }}>Github Cards</Text>
+      <Form onSubmit={addNewProfile} />
+      <CardList profiles={profiles}  removeProfile={removeProfile} />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 60,
+  },
+});
