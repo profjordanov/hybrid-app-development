@@ -1,3 +1,5 @@
+https://github.com/profjordanov/hybrid-app-development/raw/master/100.%20Cordova%20jQuery/app-debug.apk
+
 # Виртуална стая за online присъединяване 
 https://meet.google.com/hbk-mkon-inm
 

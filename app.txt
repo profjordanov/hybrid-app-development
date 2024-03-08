@@ -1,1 +1,0 @@
-https://github.com/profjordanov/hybrid-app-development/raw/master/100.%20Cordova%20jQuery/app-debug.apk
