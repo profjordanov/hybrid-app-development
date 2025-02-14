@@ -1,5 +1,5 @@
-# JS Challenges, Data Structures, and Algorithms
-JJ UE-Varna 2024
+# Data Structures and Algorithms
+UE-Varna 2025
 ## File Structure
 
 Each folder includes:
