@@ -18,11 +18,11 @@
 | 28/03/2025 | Контролно 2                                                     |
 | 02/04/2025 | Лекция - React Native ( nativecards )                           |
 | 04/04/2025 | Упражнение - React Native ( docs.expo.dev )                     |
-| 09/04/2025 | Лекция - React Native                                           |
+| 09/04/2025 | Взаимовръзка на мобилни и облачни технологии (students manager) |
 | 10/04/2025 | React Native (Authentication, Context API and Firebase )        |
 | 11/04/2025 | Взаимовръзка на мобилни и облачни технологии (students manager) |
 | 16/04/2025 | Лекция - Софтуерна архитектура и дизайн                         |
-| 23/04/2025 | Лекция - Разработка и защити на КР                              |
+| 23/04/2025 | Упражнение - React Native                                       |
 | 24/04/2025 | Упражнение - Ionic, .NET MAUI, Kotlin Multiplatform & AppGyver  |
 | 25/04/2025 | Защити на КР (Heidelberg Materials Digital Hub Varna)           |
 
