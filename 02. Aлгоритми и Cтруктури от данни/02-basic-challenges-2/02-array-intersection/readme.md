@@ -34,25 +34,6 @@ arrayIntersection([1, 2, 3, 4, 5], [5, 4, 3, 2, 1]); // should return [1, 2, 3, 
 - You could use a for loop to iterate through the first array and check if each element is in the second array using the `includes` method.
 - You could also take the approach of using a Set to store the elements of the first array and then iterate through the second array and check if each element is in the Set using the `has` method.
 
-## Solutions
-
-<details>
-  <summary>Click For Solution 1</summary>
-
-```js
-function arrayIntersection(arr1, arr2) {
-  const intersection = [];
-
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr2.includes(arr1[i]) && !intersection.includes(arr1[i])) {
-      intersection.push(arr1[i]);
-    }
-  }
-
-  return intersection;
-}
-```
-
 ### Explanation
 
 - Iterate through the first array
