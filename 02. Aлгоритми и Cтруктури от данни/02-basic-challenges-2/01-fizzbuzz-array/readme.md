@@ -35,31 +35,6 @@ fizzBuzzArray(15); // [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11
 
 - Instead of console logging each number, you will need to push each number into an array.
 
-## Solutions
-
-<details>
-  <summary>Click For Solution</summary>
-
-```js
-function fizzBuzz(num) {
-  const arr = [];
-
-  for (let i = 1; i <= num; i++) {
-    if (i % 3 === 0 && i % 5 === 0) {
-      arr.push('FizzBuzz');
-    } else if (i % 3 === 0) {
-      arr.push('Fizz');
-    } else if (i % 5 === 0) {
-      arr.push('Buzz');
-    } else {
-      arr.push(i);
-    }
-  }
-
-  return arr;
-}
-```
-
 ### Explanation
 
 - Create an empty array to store our results.
