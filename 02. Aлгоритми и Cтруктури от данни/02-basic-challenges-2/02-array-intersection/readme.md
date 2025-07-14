@@ -42,28 +42,6 @@ arrayIntersection([1, 2, 3, 4, 5], [5, 4, 3, 2, 1]); // should return [1, 2, 3, 
 - If it is not, push it into the intersection array
 - Return the intersection array
 
-</details>
-
-<details>
-  <summary>Click For Solution 2</summary>
-
-In this solution, we will use a Set. A Set is a data structure that stores unique values. We will have a section on maps, sets later. If you are not familiar with sets, that is fine. You can still follow along with this solution.
-
-```js
-function arrayIntersection(arr1, arr2) {
-  const set1 = new Set(arr1);
-  const intersection = [];
-
-  for (let num of arr2) {
-    if (set1.has(num)) {
-      intersection.push(num);
-    }
-  }
-
-  return intersection;
-}
-```
-
 ### Explanation
 
 - Create a new Set from the first array
