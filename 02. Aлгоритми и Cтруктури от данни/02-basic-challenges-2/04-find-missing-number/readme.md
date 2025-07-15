@@ -35,43 +35,6 @@ findMissingNumber([10, 5, 1, 2, 4, 6, 8, 3, 9]); // 7
 - Subtract the sum of the numbers in the array from the sum of the numbers from 1 to n (inclusive).
 - You could use a for loop or the reduce method to calculate the sum of the numbers in the array. We will be focusing on methods like reduce in the next section, but I will still show you both ways.
 
-## Solutions
-
-<details>
-  <summary>Click For Solution</summary>
-
-```js
-function findMissingNumber(arr) {
-  if (!arr || arr.length === 0) {
-    return undefined;
-  }
-
-  const n = arr.length + 1;
-  const expectedSum = (n * (n + 1)) / 2;
-
-  let actualSum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    actualSum += arr[i];
-  }
-
-  return expectedSum - actualSum;
-}
-
-// Using reduce
-function findMissingNumber(arr) {
-  if (!arr || arr.length === 0) {
-    return undefined;
-  }
-
-  const n = arr.length + 1;
-  const expectedSum = (n * (n + 1)) / 2;
-
-  const actualSum = arr.reduce((sum, num) => sum + num, 0);
-
-  return expectedSum - actualSum;
-}
-```
-
 ### Explanation
 
 The `findMissingNumber` function takes in an array of unique numbers from 1 to n (inclusive), where one number is missing, and returns the missing number.
