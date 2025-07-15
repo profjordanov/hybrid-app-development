@@ -39,37 +39,6 @@ wordFrequencyCounter(
 - Regular expressions can be helpful for splitting the string into words and removing punctuation marks.
 - You can use a map to store the word frequencies, where the word is the key, and the count is the value. Loop through each word, update the count in the map, and return the final map.
 
-### Solutions
-
-<details>
-  <summary>Click For Solution</summary>
-
-```js
-function wordFrequencyCounter(str) {
-  // Convert the string to lowercase and split it into an array of words
-  const words = str.toLowerCase().split(/\W+/);
-
-  // Create an empty map to store word frequencies
-  const wordFrequency = new Map();
-
-  // Loop through each word in the array
-  for (const word of words) {
-    // Ignore empty strings (caused by multiple spaces or punctuation marks)
-    if (word === '') continue;
-
-    // If the word is already in the map, increment its frequency
-    if (wordFrequency.has(word)) {
-      wordFrequency.set(word, wordFrequency.get(word) + 1);
-    } else {
-      // If the word is not in the map, add it with a frequency of 1
-      wordFrequency.set(word, 1);
-    }
-  }
-
-  return wordFrequency;
-}
-```
-
 ### Explanation
 
 - Create a variable `words` to store the lowercase version of the input string, split into an array of words. The regular expression `/W+/` matches one or more non-word characters, which includes spaces and punctuation marks. This will split the string into an array of words, ignoring spaces and punctuation marks.
