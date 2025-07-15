@@ -35,24 +35,6 @@ isValidIPv4('123.045.067.089'); // false
 - You can use the `split()` method to break the string into parts based on the dot character.
 - You can use `every()` to check if all octets are within the valid range of 0 to 255.
 
-## Solutions
-
-<details>
-  <summary>Click For Solution</summary>
-
-```js
-function isValidIPv4(input) {
-  const octets = input.split('.');
-  if (octets.length !== 4) {
-    return false;
-  }
-  return octets.every((octet) => {
-    const num = parseInt(octet);
-    return num >= 0 && num <= 255 && octet === num.toString();
-  });
-}
-```
-
 ## Explanation
 
 - Split the input string into an array of strings using the `split()` method.
