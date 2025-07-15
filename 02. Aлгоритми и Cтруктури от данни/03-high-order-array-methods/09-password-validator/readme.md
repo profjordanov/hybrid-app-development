@@ -40,31 +40,6 @@ validatePassword('HelloWorld'); // should return false (no digit)
 
 - You can use the `split` function to convert the string into an array of characters and then use the `some` function to check if at least one character meets a certain condition.
 
-## Solution
-
-<details>
-  <summary>Click For Solution</summary>
-
-```js
-function validatePassword(password) {
-  const isLengthValid = password.length >= 8;
-
-  const hasUppercase = password
-    .split('')
-    .some((char) => char === char.toUpperCase() && char !== char.toLowerCase());
-
-  const hasLowercase = password
-    .split('')
-    .some((char) => char === char.toLowerCase() && char !== char.toUpperCase());
-
-  const hasDigit = password
-    .split('')
-    .some((char) => !isNaN(parseInt(char, 10)));
-
-  return isLengthValid && hasUppercase && hasLowercase && hasDigit;
-}
-```
-
 ### Explanation
 
 - Create a variable called `isLengthValid` and assign it the value of `true` if the password is at least 8 characters long, and `false` otherwise.
