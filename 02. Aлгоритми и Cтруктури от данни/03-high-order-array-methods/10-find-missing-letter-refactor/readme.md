@@ -66,16 +66,7 @@ This solution uses the `filter` method.
 
 ```js
 function findMissingLetter(arr) {
-  const missingCharCode = arr.filter((char, index) => {
-    if (index === 0) return false;
-    const prevCharCode = arr[index - 1].charCodeAt(0);
-    const currentCharCode = char.charCodeAt(0);
-    return currentCharCode - prevCharCode > 1;
-  })[0];
 
-  return missingCharCode
-    ? String.fromCharCode(missingCharCode.charCodeAt(0) - 1)
-    : '';
 }
 ```
 
@@ -96,15 +87,7 @@ This solution uses the `reduce` method.
 ```js
 function findMissingLetter(arr) {
   let start = arr[0].charCodeAt(0);
-  const missingCharCode = arr.reduce((missing, char) => {
-    const current = char.charCodeAt(0);
-    if (current - start > 1 && missing === null) {
-      missing = start + 1;
-    }
-    start = current;
-    return missing;
-  }, null);
-  return missingCharCode ? String.fromCharCode(missingCharCode) : '';
+
 }
 ```
 
