@@ -1,5 +1,5 @@
 # Data Structures and Algorithms
-UE-Varna 2025
+UE-Varna 2026
 ## File Structure
 
 Each folder includes:
