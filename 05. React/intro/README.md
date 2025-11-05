@@ -1,43 +1,57 @@
 # Динамично рендиране на списък: React vs. Vanilla JavaScript
 
-Предоставените кодови фрагменти илюстрират два различни подхода за динамично рендиране на списък с цели числа като `<li>` елементи в HTML документ. Първият използва React (популярна JavaScript библиотека за изграждане на потребителски интерфейси), а вторият — ванилен JavaScript (основния език на JavaScript). 
-
-Основната разлика между тях не е свързана с използването на `map` вместо `forEach`, а по-скоро с различните парадигми и механизми на работа на React в сравнение с прямата (vanilla) манипулация на DOM. По-долу са описани разликите между тези два кода и е изяснено погрешното схващане, че „не може да се използва `forEach`“ в React.
-
----
-
-## React подход
-
-```javascript
-window.onload = () => {
-   const rootElement = document.getElementById("root");
-   const ints = [1, 2, 3];
-
-   const root = ReactDOM.createRoot(rootElement);
-   const childrenElements = ints.map(id => {
-     return React.createElement("li", null, id);
-   });
-
-   root.render(childrenElements);
-};
-```
-
-При този подход функцията `React.createElement` се използва за създаване на виртуални DOM елементи за всеки елемент от масива `ints`. Методът `map` връща нов масив от React елементи (`<li>`), който след това се предава на `root.render()`. Тук React използва виртуален DOM, за да определи най-ефективния начин за отразяване на тези елементи в реалния DOM.
-
-### Ключови точки
-
-- **Виртуален DOM**: React поддържа виртуален DOM, който прави обновяванията по-ефективни, като сравнява промените с виртуално копие на DOM.  
-- **Масив от елементи**: `root.render()` може да приеме масив от React елементи. Използването на `map` е естествено, тъй като нужното поведение е „трансформация“ на масива от стойности в масив от React елементи.
-
----
+Този раздел разглежда два подхода за динамично рендиране на списък от цели числа.
 
 ## Vanilla JavaScript подход
 
 ```javascript
 window.onload = () => {
-   const rootElement = document.getElementById("root");
-   const ints = [1, 2, 3];
+  const rootElement = document.getElementById("root");
+  const ints = [1, 2, 3];
 
-   ints.forEach(i => {
-     let li = document.createElement("li");
-     li.innerHTML = i;
+  ints.forEach(i => {
+    let li = document.createElement("li");
+    li.innerHTML = i;
+    rootElement.appendChild(li);
+  });
+};
+```
+
+### Как работи?
+
+1. Взима се елементът с `id="root"`.  
+2. Итерираме през масива `ints` с `forEach`, без да генерираме нов масив.  
+3. За всяко число (1, 2, 3) се създава `<li>` елемент и се добавя директно към `rootElement
+
+Тук се използва forEach, защото целта е да извършим страничен ефект (добавяне в DOM) за всеки обект. Няма нужда да връщаме нов масив — нещо, което map обикновено прави.
+
+## React подход
+
+```javascript
+window.onload = () => {
+  const rootElement = document.getElementById("root");
+  const ints = [1, 2, 3];
+
+  const root = ReactDOM.createRoot(rootElement);
+  const childrenElements = ints.map(id => {
+    return React.createElement("li", null, id);
+  });
+
+  root.render(childrenElements);
+};
+```
+
+### Как работи?
+
+1. Вземаме референция към HTML елемента с `id="root"`, който ще бъде контейнерът (или „коренът“) за нашето React приложение.  
+2. Масивът `ints` съдържа стойностите, които искаме да изобразим (1, 2 и 3).  
+3. Прилагаме `ints.map(...)`, за да създадем масив от React елементи — всеки елемент представлява `<li>` в React контекста.  
+4. React използва този масив от елементи, за да изгради или обнови виртуалния DOM и да го „нанесе” в реалния DOM по най-оптималния начин.
+
+### Защо предпочитаме `map`?
+
+- Методът `map` връща нов масив, съдържащ елементите, които искаме да рендираме. При React често се налага да генерираме именно масив от елементи, който да бъде подаден към метода за рендиране (`root.render()` или в класически React — `ReactDOM.render()`).
+- `map` улеснява дадена трансформация от списък от различни стойности към списък от React елементи.
+
+---
+
