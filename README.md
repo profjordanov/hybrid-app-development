@@ -31,7 +31,7 @@
 3) максимум 3 точки от 1во контролно 
 4) максимум 3 точки от 2ро контролно 
 5) максимум 10 точки могат да бъдат получени за успешно полагане на „автоматизиран“ изпит и разработка на функционалност в платформата: [Chatbot](https://students-manager.site/Click).
-6) максимум 20 точки за принос (contribution) към проекта [Open Source](https://github.com/profjordanov/students-manager)
+6) максимум 20 точки за принос (contribution) към проекта [Students Manager Open Source](https://github.com/profjordanov/students-manager)
 
 # Инфо
 
