@@ -26,12 +26,12 @@
 
 # Оценяване            
 
-1) максимум 7 точки от направени тестове в платформата https://students-manager.website/Test
-2) максимум 7 точки от предадени домашни в платформата https://students-manager.website/Homework
+1) максимум 7 точки от направени тестове в платформата https://students-manager.site/Test
+2) максимум 7 точки от предадени домашни в платформата https://students-manager.site/Homework
 3) максимум 3 точки от 1во контролно 
 4) максимум 3 точки от 2ро контролно 
-5) максимум 10 точки от полагане на "автоматизиран" изпит в платформата https://students-manager.website/Click 
-6) максимум 20 точки от курсов проект https://students-manager.website/Coursework
+5) максимум 10 точки могат да бъдат получени за успешно полагане на „автоматизиран“ изпит и разработка на функционалност в платформата: [Chatbot](https://students-manager.site/Click).
+6) максимум 20 точки за принос (contribution) към проекта [Open Source](https://github.com/profjordanov/students-manager)
 
 # Инфо
 
