@@ -16,24 +16,23 @@
 | 26/03/2026 | Лекция                                                          |
 | 27/03/2026 | Onsen UI                                                        |
 | 31/03/2026 | Контролно 2                                                     |
-| 02/04/2026 | Лекция                                                          |
+| 02/04/2026 | Лекция - React ЙЙ                                               |
 | 07/04/2026 | React                                                           |
-| 09/04/2026 | Лекция                                                          |
+| 09/04/2026 | Лекция  - React ЙЙ                                              |
 | 14/04/2026 | React                                                           |
 | 16/04/2026 | Лекция - Разработка и защита на курсови проекти                 |
-| 21/04/2026 | React                                                           |
+| 21/04/2026 | Защити на КР (Heidelberg Materials Digital Hub Varna)           |
 | 23/04/2026 | Лекция - Разработка и защита на курсови проекти                 |
-| 24/04/2026 | Софтуерна архитектура и дизайн                                  |
-| 28/04/2026 | Защити на КР (Heidelberg Materials Digital Hub Varna)           |
 
 # Оценяване            
 
-1) максимум 7 точки от направени тестове в платформата https://students-manager-dev.azurewebsites.net/Test и https://students-manager.site/Test 
-2) максимум 7 точки от предадени домашни в платформата https://students-manager-dev.azurewebsites.net/Homework и https://students-manager.site/Homework
-3) максимум 3 точки от 1во контролно 
-4) максимум 3 точки от 2ро контролно 
-5) максимум 10 точки могат да бъдат получени за успешно полагане на „автоматизиран“ изпит и разработка на функционалност в платформата: [Chatbot](https://students-manager.site/Click).
-6) максимум 20 точки за принос (contribution) към проекта [Students Manager Open Source](https://github.com/profjordanov/students-manager)
+1) максимум 7 точки от направени тестове в платформата https://students-manager.site/Test
+2) максимум 7 точки от направени тестове в платформата https://students-manager-dev.azurewebsites.net/Test
+3) максимум 7 точки от предадени домашни в платформата https://students-manager-dev.azurewebsites.net/Homework
+4) максимум 5 точки от 1во контролно 
+5) максимум 5 точки от 2ро контролно 
+6) максимум 10 точки могат да бъдат получени за успешно полагане на „автоматизиран“ изпит и разработка на функционалност в платформата: [Chatbot](https://students-manager.site/Click).
+7) максимум 20 точки за принос (contribution) към проекта [Students Manager Open Source](https://github.com/profjordanov/students-manager)
 
 # Инфо
 
