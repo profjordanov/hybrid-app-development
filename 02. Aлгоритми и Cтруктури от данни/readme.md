@@ -1,5 +1,10 @@
 # Data Structures and Algorithms
 UE-Varna 2026
+
+## Ресурси към задачи за упражнение и домашно
+
+[Тук](https://github.com/profjordanov/hybrid-app-development/raw/master//02.%20A%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B8%20%D0%B8%20C%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B8%20%D0%BE%D1%82%20%D0%B4%D0%B0%D0%BD%D0%BD%D0%B8/%D0%91%D0%93%20A%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B8%20%D0%B8%20C%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B8%20%D0%BE%D1%82%20%D0%B4%D0%B0%D0%BD%D0%BD%D0%B8.zip) може да изтеглите ресурсите на български език.
+
 ## File Structure
 
 Each folder includes:
