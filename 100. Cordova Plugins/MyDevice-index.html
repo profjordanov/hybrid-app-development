@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+    <title>MyDevice</title>
+</head>
+<body>
+    <div data-role="page" id="main-page">
+
+        <div data-role="header" class="header">
+            <h1 id="app-title">MyDevice App</h1>
+            <a href="/" class="ui-btn ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext" rel="external">Home</a>
+        </div>
+
+        <div role="main" class="ui-content">
+
+            <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                <li>
+                    Cordova version :
+                    <span id="cordovaVersion"></span>
+                </li>
+                <li>
+                    Device's manufacturer :
+                    <span id="manufacturer"></span>
+                </li>
+                <li>
+                    Is it running on a simulator :
+                    <span id="isVirtual"></span>
+                </li>
+                <li>
+                    Device's model :
+                    <span id="deviceModel"></span>
+                </li>
+                <li>
+                    Device's operating system:
+                    <span id="operatingSystem"></span>
+                </li>
+                <li>
+                    Operating system version:
+                    <span id="osVersion"></span>
+                </li>
+                <li>
+                    Universally Unique Identifier:
+                    <span id="uuid"></span>
+                </li>
+                <li>
+                    Device hardware serial number:
+                    <span id="serial"></span>
+                </li>
+                <li>
+                    Battery Percentage:
+                    <span id="batteryStatus"></span>
+                </li>
+                <li>
+                    Is Plugged:
+                    <span id="isPlugged"></span>
+                </li>
+                <li>
+                    Connection type:
+                    <span id="connectionType"></span>
+                </li>
+            </ul>
+
+        </div>
+
+        <footer data-role="footer" data-position="fixed">
+            <h4>
+                Make picture
+                <a href="#camera-page" data-transition="slide" data-role="button" data-icon="camera">Camera</a>
+            </h4>
+        </footer>
+
+    </div>
+
+    <div data-role="page" id="camera-page">
+
+        <div data-role="header" class="header">
+            <h1 id="app-title">MyDevice App</h1>
+            <a href="/" class="ui-btn ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext" rel="external">Home</a>
+        </div>
+
+        <div role="main" class="ui-content">
+            <button id="camera-btn" data-role="button" data-icon="camera">CLICK</button>
+            <img id="myImage" src="#" alt="Alternate Text" class="not-displayed" style="margin: auto;" />
+        </div>
+
+        <footer data-role="footer" data-position="fixed">
+            <h4>
+                <a href="#main-page" 
+                   data-transition="slide" 
+                   data-role="button" 
+                   class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-l">Info</a>
+                <a href="#geolocation-page" 
+                   data-transition="slide"
+                   data-role="button"
+                   class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-location">GPS</a>
+            </h4>
+        </footer>
+
+    </div>
+
+    <div data-role="page" id="geolocation-page">
+
+        <div data-role="header" class="header">
+            <h1 id="app-title">MyDevice App</h1>
+            <a href="/" class="ui-btn ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext" rel="external">Home</a>
+        </div>
+
+        <div role="main" class="ui-content">
+
+            <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                <li>
+                    Latitude :
+                    <span id="latitude"></span>
+                </li>
+                <li>
+                    Longitude :
+                    <span id="longitude"></span>
+                </li>
+                <li>
+                    Altitude :
+                    <span id="altitude"></span>
+                </li>
+                <li>
+                    Accuracy :
+                    <span id="accuracy"></span>
+                </li>
+                <li>
+                    Altitude Accuracy :
+                    <span id="altitudeAccuracy"></span>
+                </li>                          
+            </ul>
+
+        </div>
+        <footer data-role="footer" data-position="fixed">
+            <h4>
+                Make picture
+                <a href="#camera-page" data-transition="slide" data-role="button" data-icon="camera">Camera</a>
+            </h4>
+        </footer>
+
+    </div>
+
+    <script src="scripts/jquery-1.8.0.min.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+</body>
+</html>
